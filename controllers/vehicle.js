@@ -20,7 +20,7 @@ const getPagingData = (data, page, limit) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-  const { page, size, title } = req.query;
+  const { page, size } = req.query;
 
   const { limit, offset } = getPagination(page, size);
 
