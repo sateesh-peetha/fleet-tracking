@@ -26,7 +26,7 @@ exports.findAll = (req, res) => {
 
   const { limit, offset } = getPagination(page, size);
 
-  Vehicle.findAndCountAll({ limit, offset })
+  Vehicle.findAndCountAll({ limit, offset , attributes: ['id'] })
     .then(data => {
       const response = getPagingData(data, page, limit);
       res.send(response);
