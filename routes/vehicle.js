@@ -2,6 +2,8 @@ const { Router } = require('express');
 const vehcile = require('../controllers/vehicle');
 const router = Router();
 
+router.get('/all', vehcile.findAll);
+
 router.get('/:id', vehcile.getVehicle);
 
 router.post('/register', vehcile.registerVehicle);

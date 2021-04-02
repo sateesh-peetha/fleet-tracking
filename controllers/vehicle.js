@@ -1,6 +1,43 @@
 const db = require('../models');
 const { Vehicle } = db;
 
+
+const getPagination = (page, size) => {
+  const limit = size ? +size : 3;
+  const offset = page ? page * limit : 0;
+
+  return { limit, offset };
+};
+
+const getPagingData = (data, page, limit) => {
+  const { count: totalItems, rows: vehicles } = data;
+  const currentPage = page ? +page : 0;
+  const totalPages = Math.ceil(totalItems / limit);
+
+  return { totalItems, vehicles, totalPages, currentPage };
+};
+
+
+// Retrieve all Tutorials from the database.
+exports.findAll = (req, res) => {
+  const { page, size, title } = req.query;
+
+  const { limit, offset } = getPagination(page, size);
+
+  Vehicle.findAndCountAll({ limit, offset })
+    .then(data => {
+      const response = getPagingData(data, page, limit);
+      res.send(response);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};
+
+
 exports.getVehicle = async (req, res) => {
   const { id } = req.params;
 
