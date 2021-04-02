@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: DataTypes.STRING,
     createAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    updatedAt: DataTypes.DATE,
+    registrationCode: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Vehicle',

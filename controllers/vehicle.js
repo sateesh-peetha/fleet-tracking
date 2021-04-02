@@ -1,5 +1,7 @@
 const db = require('../models');
+const shortid = require('shortid');
 const { Vehicle } = db;
+
 
 
 const getPagination = (page, size) => {
@@ -80,6 +82,7 @@ exports.registerVehicle = async (req, res) => {
   try {
     let newVehicle = await Vehicle.create({
       name,
+      registrationCode : shortid.generate()
     });
     return res.send(newVehicle);
   } catch (err) {

@@ -44,7 +44,7 @@ exports.findAll = (req, res) => {
 
 
 exports.updateLocation = async (req, res) => {
-    const { id, lat, lang } = req.body;
+    const { id, lat, lang , registrationCode } = req.body;
 
     if (!id) {
         return res.status(400).send({
@@ -55,6 +55,7 @@ exports.updateLocation = async (req, res) => {
     let vehicleExists = await Vehicle.findOne({
         where: {
             id: id,
+            registrationCode: registrationCode
         },
     });
 
