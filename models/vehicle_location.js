@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Vehicle_location.init({
-    id: DataTypes.INTEGER,
+    vehicle_id: {
+      allowNull: false,
+      primaryKey: false,
+      type: DataTypes.INTEGER
+    },
     updatedAt: DataTypes.DATE,
     latitude: DataTypes.FLOAT,
     longitude: DataTypes.FLOAT

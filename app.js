@@ -4,9 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require("helmet");
 
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var routes = require('./routes');
 
 var app = express();
 
@@ -17,8 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/vehicle', routes.vehcile);
 
 app.use((req, res) => {
     res.status(404).send('404: Page not found');
