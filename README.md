@@ -17,21 +17,21 @@ run "npm start"
 
 API and Frontend is seperated to handle traffic seperatly
 
-for production db conifguration read and write server concept can be used.
+for production db conifguration read and write server concept can be used with connection pooling. this will handle trafic well. 
 
 ```javascript
 "replication": {
             "read": [
                 {
-                    "host": "docty-prod-colombia.cluster-custom-cvpqhk0vnc1l.us-east-2.rds.amazonaws.com",
+                    "host": "localhost",
                     "username": "admin",
-                    "password": "NhXpmV7QgpeaqF77yHsU"
+                    "password": "admin"
                 }
             ],
             "write": {
-                "host": "docty-prod-colombia.cluster-cvpqhk0vnc1l.us-east-2.rds.amazonaws.com",
-                "username": "admin",
-                "password": "NhXpmV7QgpeaqF77yHsU"
+               "host": "localhost",
+                    "username": "admin",
+                    "password": "admin"
             }
         },
         "pool": {
