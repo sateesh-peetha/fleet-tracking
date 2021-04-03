@@ -7,6 +7,9 @@ module.exports = {
         primaryKey: false,
         type: Sequelize.INTEGER
       },
+      id: {
+        type: Sequelize.INTEGER
+      },
       updatedAt: {
         type: Sequelize.DATE
       },
