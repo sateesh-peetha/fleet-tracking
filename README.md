@@ -13,6 +13,9 @@ run the db migration scripts to initialize db "npx sequelize-cli db:migrate"
 #### Step 3: 
 run "npm start"
 
+## Design
+Node, Express framework, Sequelize for ORM, Mysql is used.
+
 ## Security
  Each vehicle will get its own registration code. to update location registration code is required.
 
