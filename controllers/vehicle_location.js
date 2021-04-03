@@ -1,5 +1,7 @@
 const db = require('../models');
 const { Vehicle, Vehicle_location } = db;
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 
 const getPagination = (page, size) => {
@@ -26,8 +28,8 @@ exports.findAll = (req, res) => {
     Vehicle_location.findAndCountAll({
         where: {
             vehicle_id: id,
-            from: {
-                $between: [fromDate, toDate]
+            updatedAt: {
+                [Op.between] : [fromDate, toDate]
             }
         }, limit, offset
     })
