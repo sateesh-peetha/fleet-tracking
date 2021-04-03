@@ -41,7 +41,7 @@ for production db conifguration read and write server concept can be used with c
             "max": 50,
             "idle": 30000
         }
-        ```
+```
 ## Unit Testing
 Mocha and Chai frameworks will be used. as of now out of scope due to time limitation
 
