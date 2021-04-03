@@ -18,7 +18,7 @@ const getPagingData = (data, page, limit) => {
 };
 
 exports.findAll = (req, res) => {
-    const { page, size} = req.query;
+    const { page, size , fromDate, toDate} = req.query;
     const { id } = req.params;
 
     const { limit, offset } = getPagination(page, size);
@@ -26,6 +26,9 @@ exports.findAll = (req, res) => {
     Vehicle_location.findAndCountAll({
         where: {
             vehicle_id: id,
+            from: {
+                $between: [fromDate, toDate]
+            }
         }, limit, offset
     })
         .then(data => {
