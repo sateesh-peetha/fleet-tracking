@@ -13,6 +13,9 @@ run the db migration scripts to initialize db "npx sequelize-cli db:migrate"
 #### Step 3: 
 run "npm start"
 
+## Security
+ Each vehicle will get its own registration code. to update location registration code is required.
+
 ## Handling Scaling.
 
 API and Frontend is seperated to handle traffic seperatly
@@ -39,4 +42,8 @@ for production db conifguration read and write server concept can be used with c
             "idle": 30000
         }
         ```
+## Unit Testing
+Mocha and Chai frameworks will be used. as of now out of scope due to time limitation
 
+## end to end testing
+cypress framework will be used for end to end testing.
