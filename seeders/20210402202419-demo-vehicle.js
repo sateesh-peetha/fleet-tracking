@@ -5,21 +5,25 @@ module.exports = {
     await queryInterface.bulkInsert('Vehicles', [{
       name: 'Test Vehicle 1',
       createdAt: new Date(),
+      registrationCode : '12',
       updatedAt: new Date()
     },
     {
       name: 'Test Vehicle 2',
       createdAt: new Date(),
+      registrationCode : '12',
       updatedAt: new Date()
     },
     {
       name: 'Test Vehicle 3',
       createdAt: new Date(),
+      registrationCode : '12',
       updatedAt: new Date()
     },
     {
       name: 'Test Vehicle 4',
       createdAt: new Date(),
+      registrationCode : '12',
       updatedAt: new Date()
     },
     {

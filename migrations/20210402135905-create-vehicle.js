@@ -14,6 +14,9 @@ module.exports = {
       createAt: {
         type: Sequelize.DATE
       },
+      registrationCode : {
+        type: Sequelize.STRING
+      },
       updatedAt: {
         type: Sequelize.DATE
       },
