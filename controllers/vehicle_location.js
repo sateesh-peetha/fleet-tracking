@@ -17,8 +17,6 @@ const getPagingData = (data, page, limit) => {
     return { totalItems, Vehicle_locations, totalPages, currentPage };
 };
 
-
-// Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
     const { page, size} = req.query;
     const { id } = req.params;
